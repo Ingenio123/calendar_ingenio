@@ -10,7 +10,8 @@
     "postinstall": "prisma generate",
     "pre-commit": "lint-staged",
     "lint": "eslint . --ext .ts,.js,.tsx,.jsx",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "export": "npm run build && next export"
   },
   "engines": {
     "node": "^14.0.0"
