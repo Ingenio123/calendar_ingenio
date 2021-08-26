@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start_docker": "docker-compose up",
+    "build_docker": "docker-compose build",
+    "stop_docker": "docker-compose down",
+    "clean_docker": "docker system prune -f",
+    "seed": "docker exec -it  prisma npm run seed",
     "dev": "next dev",
     "test": "node node_modules/.bin/jest",
     "build": "next build",
@@ -11,7 +16,7 @@
     "pre-commit": "lint-staged",
     "lint": "eslint . --ext .ts,.js,.tsx,.jsx",
     "prepare": "husky install",
-    "export": "npm run build && next export"
+    "export": "npm run build && next export && mv out _static"
   },
   "engines": {
     "node": "^14.0.0"
